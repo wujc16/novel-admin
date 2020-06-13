@@ -9,6 +9,7 @@
         <el-aside class="home-aside">
         </el-aside>
         <el-main>
+          {{msg}}
         </el-main>
       </el-container>
     </el-main>
