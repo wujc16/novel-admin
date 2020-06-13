@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HomePage from 'pages/HomePage'
-import SettingPage from 'pages/SettingPage'
-import MainPage from 'pages/MainPage'
 
 Vue.use(Router)
+
+// 路由懒加载
+const MainPage = () => import(/* webpackChunkName: "MainPage" */ 'pages/MainPage')
+const HomePage = () => import(/* webpackChunkName: "HomePage" */ 'pages/HomePage')
+const SettingPage = () => import(/* webpackChunkName: "SettingsPage" */ 'pages/SettingPage')
 
 const router = new Router({
   mode: 'history',
@@ -34,7 +36,6 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  console.log('to', to, 'from', from);
   next();
 });
 
