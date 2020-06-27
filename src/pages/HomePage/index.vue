@@ -1,10 +1,6 @@
 <template>
   <el-main class="home-main">
-    <el-container>
-      <el-main>
-        {{msg}}
-      </el-main>
-    </el-container>
+    {{msg}}
   </el-main>
 </template>
 
@@ -22,11 +18,7 @@ export default {
 <style lang="less">
 .main-container{
   .home-main{
-    padding: 0;
     height: 100%;
-    .el-container{
-      height: 100%;
-    }
   }
 }
 </style>

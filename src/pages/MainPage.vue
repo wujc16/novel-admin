@@ -4,6 +4,7 @@
       <div class="left-group">
         <img src="../assets/logo.png" alt="" class="logo-img" @click="goHome"/>
         <div class="title" @click="goHome">Novel Admin</div>
+        <div class="tf-router" @click="goTf">恶意检测</div>
       </div>
       <div class="right-group">
         <el-icon class="el-icon-setting" @click.native="goSettings"/>
@@ -33,6 +34,9 @@ export default {
     },
     goHome () {
       this._safePush('/home');
+    },
+    goTf () {
+      this._safePush('/tf');
     }
   },
   beforeRouteLeave (to, from, next) {
@@ -68,6 +72,16 @@ export default {
           font-size: 24px;
           margin-left: 16px;
           color: #ffffff;
+        }
+        .tf-router{
+          line-height: 60px;
+          color: #ffffff;
+          font-size: 20px;
+          margin-left: 32px;
+          cursor: pointer;
+          &:hover{
+            color: #dfdfdf;
+          }
         }
       }
       .right-group{

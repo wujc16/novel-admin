@@ -7,6 +7,7 @@ Vue.use(Router)
 const MainPage = () => import(/* webpackChunkName: "MainPage" */ 'pages/MainPage')
 const HomePage = () => import(/* webpackChunkName: "HomePage" */ 'pages/HomePage')
 const SettingPage = () => import(/* webpackChunkName: "SettingsPage" */ 'pages/SettingPage')
+const TFPage = () => import(/* webpackChunkName: "TFPage" */ 'pages/TFPage')
 
 const router = new Router({
   mode: 'history',
@@ -29,6 +30,11 @@ const router = new Router({
           path: 'settings',
           name: 'SettingPage',
           component: SettingPage
+        },
+        {
+          path: 'tf',
+          name: 'TFPage',
+          component: TFPage
         }
       ]
     }
