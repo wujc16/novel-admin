@@ -16,7 +16,7 @@
       >点击检测</el-button>
     </div>
     <div class="detect-score">
-      {{'恶意性评分：' + score}}
+      恶意性评分：{{score}}
     </div>
   </el-main>
 </template>
@@ -63,7 +63,7 @@ export default {
     }
   },
   mounted () {
-    this._loadModel()
+    // this._loadModel();
   }
 }
 </script>

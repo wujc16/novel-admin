@@ -8,6 +8,7 @@ const MainPage = () => import(/* webpackChunkName: "MainPage" */ 'pages/MainPage
 const HomePage = () => import(/* webpackChunkName: "HomePage" */ 'pages/HomePage')
 const SettingPage = () => import(/* webpackChunkName: "SettingsPage" */ 'pages/SettingPage')
 const TFPage = () => import(/* webpackChunkName: "TFPage" */ 'pages/TFPage')
+const WasmPage = () => import('pages/WasmPage')
 
 const router = new Router({
   mode: 'history',
@@ -35,6 +36,11 @@ const router = new Router({
           path: 'tf',
           name: 'TFPage',
           component: TFPage
+        },
+        {
+          path: 'wasm',
+          name: 'WasmPage',
+          component: WasmPage
         }
       ]
     }

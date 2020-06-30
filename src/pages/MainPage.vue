@@ -3,8 +3,9 @@
     <el-header class="main-header">
       <div class="left-group">
         <img src="../assets/logo.png" alt="" class="logo-img" @click="goHome"/>
-        <div class="title" @click="goHome">Novel Admin</div>
+        <div class="title" @click="goHome">Js Demos</div>
         <div class="tf-router" @click="goTf">恶意检测</div>
+        <div class="tf-router" @click="goWasm">WebAssembly</div>
       </div>
       <div class="right-group">
         <el-icon class="el-icon-setting" @click.native="goSettings"/>
@@ -37,6 +38,9 @@ export default {
     },
     goTf () {
       this._safePush('/tf');
+    },
+    goWasm () {
+      this._safePush('/wasm')
     }
   },
   beforeRouteLeave (to, from, next) {
@@ -69,6 +73,7 @@ export default {
           display: inline-block;
           height: 60px;
           line-height: 60px;
+          font-weight: 600;
           font-size: 24px;
           margin-left: 16px;
           color: #ffffff;
