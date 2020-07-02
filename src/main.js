@@ -13,5 +13,23 @@ new Vue({
   el: '#app',
   router,
   components: { App },
+  data: {
+    openCvLoaded: false
+  },
+  methods: {
+    loadOpenCv () {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = '/static/opencv.js';
+      script.async = true;
+      document.body.appendChild(script);
+      script.onload = () => {
+        this.openCvLoaded = true
+      }
+    }
+  },
+  mounted () {
+    this.loadOpenCv();
+  },
   template: '<App/>'
 });

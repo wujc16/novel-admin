@@ -34,7 +34,8 @@ export default {
       inputNum: 20,
       wasmFibonacci: null,
       jsCost: 0,
-      wasmCost: 0
+      wasmCost: 0,
+      cv: {}
     }
   },
   methods: {
@@ -50,7 +51,6 @@ export default {
       const wasmEndTime = Date.now();
       this.jsCost = jsEndTime - startTime;
       this.wasmCost = wasmEndTime - jsEndTime;
-      console.log('end');
     },
     fibonacci (n) {
       if (n <= 0) {
@@ -66,9 +66,16 @@ export default {
       const buffer = await res.arrayBuffer();
       const obj = await WebAssembly.instantiate(buffer);
       this.wasmFibonacci = obj.instance.exports['Fibonacci'];
+    },
+    async checkReady () {
+      if (window.cv && window.cv.then) {
+        this.cv = await window.cv.then();
+        console.log('cv: ', this.cv.sqrt(12, 2));
+      }
     }
   },
   mounted () {
+    this.checkReady();
     this.loadFunction('../../../static/fib.wasm');
   }
 }
